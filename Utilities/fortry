@@ -1,0 +1,4 @@
+
+
+for loc = 4 in range(10):
+    print(loc)
