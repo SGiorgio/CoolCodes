@@ -5,19 +5,21 @@ import math
 ##True Anomaly :- Elliptic Anomaly :- Mean Elliptic Anomaly :- Time 
 
 ##INPUT
-theta = float(input("True Anomaly (rad): "))
+theta = float(input("T. Anomaly (rad): "))
 e = float(input("Eccentricity: "))
-T = float(input("Orbit period (s): "))
+T = float(input("Period (s): "))
+
 ##ELABORATION 
 
 ##STEP 1: obtain Elliptic Anomaly
 
-E = 2*math.atan(math.sqrt((e-1)/(e+1))*math.tan(theta/2))
+E = 2*math.atan(math.sqrt((1-e)/(e+1))*math.tan(theta/2))
+print("E: ",E)
 
 ##STEP 2: obtain Mean Elliptic Anomaly
 
 Me = E - e * math.sin(E)
-
+print("Me: ",Me)
 ##STEP 3: obtain time elapsed 
 
 t = (Me*T)/(2*math.pi)
